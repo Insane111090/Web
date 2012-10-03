@@ -1,8 +1,22 @@
-<h1>Листинг каталога {{ dir_name }}
+<h1>Листинг каталога {{ dir_name }}</h1>
 <ul>
 {% for item in dir_content %}
-<li>{{ item }}
+<li>
+<a href={{ item }}>{{ item }} </a>
+
+{% endfor %}
+</li>
+<table width=400 border=2>
+<caption><i>Данные по файлам каталога</i></caption>
+<br></br>
+<tr><th>Файл</th><th>Размер (байт) </th> <th>Дата изменения</th>
+{% for item in file_content %}
+
+<tr align="center">
+<td>{{ item.name }}</td> <td> {{ item.size }} </td> <td> {{ item.modified }} </td>
+</tr>
 
 
 {% endfor %}
+</table>
 </ul>

@@ -6,7 +6,7 @@ from django.conf.urls import patterns, include, url
 
 urlpatterns = patterns('',
     url(r'^$','pages.views.home'),
-    url(r'^etc/(?P<direct>([-,.\w]*/)*)$','pages.views.listing'),
+    url(r'^home/(?P<direct>([-,.\w]*/)*)$','pages.views.listing'),
     # Examples:
     # url(r'^$', 'control_panel.views.home', name='home'),
     # url(r'^control_panel/', include('control_panel.foo.urls')),
