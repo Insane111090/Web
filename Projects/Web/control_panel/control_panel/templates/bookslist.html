@@ -1,0 +1,14 @@
+<h1>Список книг</h1>
+<ul>
+<table width=400 border=2>
+<tr><th>Название</th><th>Автор</th><th>Издательство</th></tr>
+{% for item in book %}
+<tr align=center>
+   <td ><a href={{ item.get_absolute_url }}>{{ item.title }}</td>
+   <td>{{ item.get_author }}</td>
+   <td>{{ item.publisher.title }}</td>
+</a>
+</tr>
+{% endfor %}
+</table>
+</ul>
