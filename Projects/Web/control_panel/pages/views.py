@@ -9,7 +9,7 @@ def home(request):
 	return render(request,'home.html',context)
 
 def listing(request,direct):
-	dir=[]
+	dr=[]
 	fl=[]
 	direct='/home/'+direct
 	for dN,d,f in os.walk(direct):
@@ -17,8 +17,8 @@ def listing(request,direct):
 			os.chdir(direct)
 			for i in f:
 				fl.append({"name":i,"size":os.path.getsize(i),"modified":datetime.fromtimestamp(int(os.path.getmtime(i))),})
-			dir = d
-	context={'dir_content':dir,'file_content':fl}
+			dr = d
+	context={'dir_content':dr,'file_content':fl}
 	return render(request,'listing.html',context)
 
 def books_list(request,dr):
