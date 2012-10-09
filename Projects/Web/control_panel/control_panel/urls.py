@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     url(r'^library/(books/)?$','pages.views.books_list'),
     url(r'^library/books/(?P<dr>([0-9])*/)$','pages.views.book_info'),
     url(r'^library/authors/(?P<dr>([0-9])*/)$','pages.views.author'),
+    url(r'^library/authors/$','pages.views.authors_list')
     # Examples:
     # url(r'^$', 'control_panel.views.home', name='home'),
     # url(r'^control_panel/', include('control_panel.foo.urls')),

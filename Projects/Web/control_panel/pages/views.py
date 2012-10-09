@@ -34,5 +34,9 @@ def book_info(request,dr):
 
 
 def author(request,dr):
-	context={'author':Author.objects.all()}
+	context={'author':Author.objects.get(id__exact=dr[:-1])}
 	return render(request,'author.html',context)
+
+def authors_list(request):
+	context={'author':Author.objects.all()}
+	return render(request,'authors_list.html',context)

@@ -1,0 +1,11 @@
+<h1>Список авторов</h1>
+<ul>
+
+{% for item in author %}
+<li>
+<a href={{item.get_absolute_url}}> {{item}} </a>
+</li>
+{% endfor %}
+
+</ul>
+

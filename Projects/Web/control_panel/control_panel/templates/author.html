@@ -1,20 +1,4 @@
-<h1>Автор</h1>
-<ul>
-<table width=800 border=2>
-<tr><th>Название</th><th>Автор</th><th>Издательство</th>
-<th>Дата публикации</th><th>Веб-Сайт</th></tr>
-{% for item in bookinf %}
-<tr align=center>
-   <td >{{  item.title }}</td>
-   <td><a href={{ item.Author.get_absolute_url_auth}}>{{item.get_author}}</a>
-   </td>
-   <td>{{ item.publisher.title }} ( {{ item.publisher.city}},
-       {{ item.publisher.country }} )</td>
-   <td>{{ item.publication_date }} </td>
-   <td><a href={{ item.publisher.website }}> {{item.publisher.website}}</a></td>
-
-</tr>
-{% endfor %}
-</table>
-</ul>
-       
+<h1>Информация об авторе</h1>
+<p>Имя: {{author.first_name}}</p>
+<p>Фамилия: {{author.last_name}}</p>
+<p>E-mail:<a href=mailto:{{author.email}}> {{author.email}}</p>
