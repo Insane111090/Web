@@ -9,7 +9,8 @@ class Author(models.Model):
 	email=models.EmailField('Электронная почта', null=True, blank=True)
 	def __unicode__(self):
 		return u'%s %s' % (self.first_name, self.last_name)
-
+	def get_absolute_url(self):
+		return '/library/authors/%i' % self.id
 
 class Book(models.Model):
 	list_display=('get_author')
@@ -31,4 +32,4 @@ class Publisher(models.Model):
 	country=models.CharField('Страна',max_length=64)
 	website=models.URLField('Адрес сайта')
 	def __unicode__(self):
-		return u'%s (%s)' % (self.title,self.website) 
+		return u'%s ' % (self.title) 

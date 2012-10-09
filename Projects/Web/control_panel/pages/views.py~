@@ -27,12 +27,10 @@ def books_list(request,dr):
 	return render(request,'bookslist.html',context)
 
 def book_info(request,dr):
-	book=Book.objects.get(id__exact=dr[:-1])
-	context={'bookinf':book,
-		'book_auth':book.authors.all()}
+	context={'bookinf':Book.objects.filter(id=dr[0:1]).order_by('id'),}
 	return render(request,'bookinfo.html',context)	
 
 
 def author(request,dr):
 	context={'author':Author.objects.all()}
-	return render(request,'author.html',context)
+	return render(request,'bookinfo.html',context)

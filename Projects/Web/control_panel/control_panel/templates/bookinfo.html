@@ -1,0 +1,20 @@
+<h1>Информация по книге</h1>
+<ul>
+<table width=800 border=2>
+<tr><th>Название</th><th>Автор</th><th>Издательство</th>
+<th>Дата публикации</th><th>Веб-Сайт</th></tr>
+<tr align=center>
+    <td >{{  bookinf }}</td>
+    <td>
+    {%for author in book_auth %}
+    <p> <a href={{author.get_absolute_url}}>{{author}}</a> </p>
+    {% endfor %}
+    </td>
+    <td>{{ bookinf.publisher }} ( {{ bookinf.publisher.city}}, 
+       {{ bookinf.publisher.country }} )</td>
+    <td>{{ bookinf.publication_date }} </td>
+    <td><a href={{ bookinf.publisher.website }}> {{bookinf.publisher.website}}</a></td>
+</tr>
+</table>
+</ul>
+
