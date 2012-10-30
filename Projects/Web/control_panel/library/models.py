@@ -18,6 +18,7 @@ class Book(models.Model):
 	authors=models.ManyToManyField('Author')
 	publisher=models.ForeignKey('Publisher', verbose_name='Publisher')
 	publication_date=models.DateTimeField('Дата выпуска',auto_now=True)
+#	image=models.ForeignKey('BooksImage',null=True,blank=True)
 	def __unicode__(self):
 		return u'%s' % (self.title)
 	def get_author(self):
@@ -33,3 +34,9 @@ class Publisher(models.Model):
 	website=models.URLField('Адрес сайта')
 	def __unicode__(self):
 		return u'%s ' % (self.title) 
+
+class BooksImage(models.Model):
+	image=models.ImageField(upload_to='images')
+	big_image=models.ImageField(blank=True,null=True,upload_to='images')
+	book=models.ForeignKey('Book')	
+
