@@ -6,7 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$','date.views.home'),
-    url(r'^save_to_db&','date.views.result'),
+    url(r'^save_to_db$','date.views.result'),
     # Examples:
     # url(r'^$', 'Vibor_date.views.home', name='home'),
     # url(r'^Vibor_date/', include('Vibor_date.foo.urls')),
