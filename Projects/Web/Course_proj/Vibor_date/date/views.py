@@ -7,4 +7,5 @@ import os
 def home(request):
 	context={'ts':datetime.now()}
 	return render(request,'home.html',context)
-
+def result(request):
+	return render(request,'result.html')

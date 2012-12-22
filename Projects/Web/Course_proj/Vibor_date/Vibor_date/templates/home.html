@@ -8,20 +8,12 @@
     <title>Выбор даты</title>
 </head>
 <body>
-<form action="send/" method="POST">
+<form action="save_to_db" method="POST">{% csrf_token %}
  <script>
     
     //$("body").text("jQuery works");
     $(function() {
         $( "#datepicker" ).datepicker();
-    });
-
-    $(function() {
-        $( "input[type=submit], a, button" )
-            .button()
-            .click(function( event ) {
-                event.preventDefault();
-            });
     });
  </script>
 
