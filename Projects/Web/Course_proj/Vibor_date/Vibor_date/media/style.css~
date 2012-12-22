@@ -1,0 +1,23 @@
+body
+{
+    background: url(8.jpg) repeat;
+    font-family: tahoma,arial,verdana,sans-serif,Lucida Sans;
+    margin-left: 50px;
+    font-size: 15px;
+}
+p{
+    color:red;
+    font-size: 17px;
+}
+h3{
+    font-size: 21px; 
+}
+a:visited{
+    color: #900060;
+}
+a:active {
+    color: yellow;
+ } 
+a:hover{
+    color: red;
+}

@@ -3,17 +3,16 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=windows-1251">
     <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"> 
+    <link rel="stylesheet" type="text/scc" href="{{STATIC_URL}}style.css">
     <script type="text/javascript" src="{{STATIC_URL}}jquery-1.8.3.js"></script>
     <script type="text/javascript" src="{{STATIC_URL}}jquery-ui-1.9.2.custom.js"></script>
     <title>Результаты</title>
 </head>
 <body>
- <script>
-    
-    $("body").text("jQuery works");
-    
- </script>
-
-<a href="/">Проголосовать еще раз</a>
+<h3>Информация успешно сохранена в базе! </h3>
+<p>Последний пользователь в системе: {{info.name}}</p>
+<p>Дата входа: {{info.date}}</p>
+Количество записей в БД: {{cnt}}<br><br>
+<a href="/">Ввести дату снова</a>
 </body>
 </html>
